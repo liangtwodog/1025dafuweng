@@ -339,6 +339,16 @@ storeApi.getQrcode = function(){
         }
     };
     // myRequest(option)
+  $(".extensionDiv .storeName").html('南山店');
+  $("#QRcode").empty();
+  var qrcode = new QRCode(document.getElementById("QRcode"), {
+    text: 'https://liangtwodog.github.io/1025dafuweng/',
+    width: 300,
+    height: 300,
+    colorDark : "#000000",
+    colorLight : "#ffffff",
+    correctLevel : QRCode.CorrectLevel.H
+  });
 };
 
 

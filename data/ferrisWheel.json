@@ -1,0 +1,10 @@
+{
+  "ferrisWheel":{
+    "sx": 0,
+    "sy": 0,
+    "cols": 17,
+    "tilew": 314,
+    "tileh": 355,
+    "frames": 17
+  }
+}

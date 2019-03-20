@@ -1,0 +1,847 @@
+#quintus_container{
+    padding: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    background-color: #000000;
+    text-align: center;
+    display: none;
+}
+.indexContent{
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: -570px auto 0;
+}
+.indexContent .logoimg{
+    background-image: url("../images/all/logo.png");
+    width: 129px;
+    height: 68px;
+    background-size: 100% 100%;
+    margin-left: 50%;
+    left: -330px;
+    position: relative;
+}
+.indexContent .title{
+    width: 632px;
+    height: 414px;
+    background-image: url("../images/user/user.png");
+    background-position: 0 -860px;
+    margin: -50px auto 5px;
+}
+.indexContent .guomeimei{
+    width: 407px;
+    height: 411px;
+    background-image: url("../images/user/user.png");
+    background-position: -620px -450px;
+    margin: 0 auto 15px;
+}
+.indexContent .startBtn{
+    width: 489px;
+    height: 108px;
+    background-image: url("../images/user/user.png");
+    background-position: 0 -665px;
+    margin: 0 auto 30px;
+}
+.indexContent .btnList{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    width: 610px;
+    margin: auto;
+}
+.indexContent .btn{
+    width: 155px;
+    height: 155px;
+    background-image: url("../images/user/user.png");
+}
+.indexContent .gameDescriptionBtn{
+    background-position: 0 -450px;
+}
+.indexContent .myPrizesBtn{
+    background-position: -190px -450px;
+}
+.indexContent .nationalRankingsBtn{
+    background-position: -380px -450px;
+}
+
+/*//游戏说明*/
+/*活动介绍*/
+.gameDescriptionDiv{
+    display: none;
+    position: absolute;
+    z-index: 6;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: -430px auto 0;
+    width: 630px;
+}
+.gameDescriptionDiv .borderTitle{
+    background-image: url("../images/user/user.png");
+    background-position: 0 0;
+}
+.gameDescriptionDiv .content{
+    position: relative;
+    width: 525px;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 100px;
+}
+.gameDescriptionDiv .content .btn{
+    position: absolute;
+    top: 38px;
+    width: 120px;
+    height: 40px;
+    display: block;
+    text-align: center;
+    color: #d65d18;
+    font-size: 26px;
+}
+.gameDescriptionDiv .content .descriptionBtn{
+    left: 0px;
+}
+.gameDescriptionDiv .content .prizeBtn{
+    left: 120px;
+}
+.gameDescriptionDiv ul{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.gameDescriptionDiv ul li{
+    color: #d65d18;
+    font-size: 24px;
+    margin-bottom: 10px;
+    position: relative;
+    line-height: 40px;
+}
+.gameDescriptionDiv ul .liLine a{
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    color: #ffffff;
+    text-align: center;
+    line-height: 30px;
+    background-color: #f3a90b;
+    font-size: 17px;
+    position: absolute;
+    text-indent: 0;
+    top: 5px;
+}
+.gameDescriptionDiv ul li .spanColor{
+    /*color: #f3a90b;*/
+    color: red;
+}
+.gameDescriptionDiv ul li .spanColor1{
+    /*color: #ea2e13;*/
+    color: red;
+}
+.gameDescriptionDiv ul li .span26{
+    font-size: 26px;
+}
+.gameDescriptionDiv ul li .span22{
+    font-size: 22px;
+}
+.gameDescriptionDiv ul li.liLine{
+    text-indent: 40px;
+}
+.gameDescriptionDiv .gameDescriptionContent{
+    background-image: url("../images/store/store.png");
+    background-position: -650px -265px;
+    width: 525px;
+    height: 601px;
+    margin: auto;
+    padding-top: 70px;
+}
+.gameDescriptionDiv .gameDescriptionContent ul{
+    height: 570px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    overflow-y: scroll;
+}
+.gameDescriptionDiv .gamePrizeContent{
+    display: none;
+    background-image: url("../images/store/store.png");
+    background-position: 0 -265px;
+    width: 525px;
+    height: 601px;
+    margin: auto;
+    padding-top: 70px;
+}
+.gameDescriptionDiv .gamePrizeContent ul{
+    height: 570px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    overflow-y: scroll;
+}
+.gameDescriptionDiv .gamePrizeContent .liLine{
+    margin-left: 16px;
+}
+
+/*全国排名*/
+.nationalRankingsDiv{
+    display: none;
+    position: absolute;
+    z-index: 6;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: -430px auto 0;
+    width: 630px;
+}
+.nationalRankingsDiv .borderTitle{
+    background-image: url("../images/user/user.png");
+    background-position: 0 -180px;
+}
+.nationalRankingsDiv .content{
+    width: 535px;
+    margin: auto;
+    padding-bottom: 4px;
+    padding-top: 20px;
+    position: relative;
+}
+
+.nationalRankingsDiv .titleTips{
+    position: absolute;
+    top: -20px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    color: red;
+    font-size: 24px;
+    text-align: center;
+
+}
+.nationalRankingsDiv .userInfo{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    font-size: 26px;
+    color: #d65d18;
+    padding-left: 20px;
+    padding-right: 70px;
+    position: relative;
+}
+.nationalRankingsDiv .userInfo span{
+    color: #ea2e13;
+    font-weight: 500;
+}
+.nationalRankingsDiv .userInfo .myScoreBtn{
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background-image: url("../images/user/user.png");
+    background-position: -2520px -280px;
+}
+
+.nationalRankingsDiv .list{
+    margin-top: 20px;
+    border-radius: 30px;
+    border: 2px solid #a14909;
+    height: 740px;
+    color: #d65d18;
+    text-align: center;
+    overflow: hidden;
+}
+.nationalRankingsDiv .list .placing{
+    width: 115px;
+}
+.nationalRankingsDiv .list .placing span{
+    display: inline-block;
+    width: 48px;
+    height: 55px;
+    margin: 12px auto 0;
+    line-height: 50px;
+}
+.nationalRankingsDiv .list .headerImg{
+    width: 100px;
+}
+.nationalRankingsDiv .list .userName{
+    width: 190px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
+}
+.nationalRankingsDiv .list .score{
+    width: 130px;
+}
+.nationalRankingsDiv .listHeader{
+    display: flex;
+    display: -webkit-flex;
+    font-size: 26px;
+    background-color: #fff160;
+    height: 65px;
+    line-height: 65px;
+}
+.nationalRankingsDiv ul{
+    font-size: 28px;
+    overflow-y: auto;
+    height: 670px;
+    padding: 0;
+    margin: 0;
+}
+.nationalRankingsDiv li{
+    display: flex;
+    display: -webkit-flex;
+    height: 70px;
+    line-height: 70px;
+}
+.nationalRankingsDiv li .userHeader{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 5px auto 0;
+    overflow: hidden;
+    border: 1px solid #a14909;
+    text-align: center;
+}
+.nationalRankingsDiv li .userHeader img{
+    width: 100%;
+    height: 100%;
+}
+.nationalRankingsDiv li:nth-child(odd){
+    background-color: #ffffff;
+}
+.nationalRankingsDiv li:nth-child(even){
+    background-color: #fffac7;
+}
+.nationalRankingsDiv li:first-child .placing span{
+    background-image: url("../images/all/all.png");
+    background-position: 0 -920px;
+}
+.nationalRankingsDiv li:nth-child(2) .placing span{
+    background-image: url("../images/all/all.png");
+    background-position: -60px -920px;
+}
+.nationalRankingsDiv li:nth-child(3) .placing span{
+    background-image: url("../images/all/all.png");
+    background-position: -120px -920px;
+}
+
+
+/*分数详情*/
+.myScoreDiv{
+    display: none;
+    position: absolute;
+    z-index: 6;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: -420px auto 0;
+    width: 630px;
+}
+.myScoreDiv .borderTitle{
+    background-image: url("../images/user/user.png");
+    background-position: -2200px 0;
+}
+.myScoreDiv .content{
+    width: 535px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 100px;
+}
+.myScoreDiv .title{
+    color: #d65d18;
+    text-align: center;
+    font-size: 30px;
+}
+.myScoreDiv .list{
+    margin-top: 20px;
+    border-radius: 30px;
+    border: 2px solid #a14909;
+    height: 620px;
+    color: #d65d18;
+    text-align: center;
+    overflow: hidden;
+}
+.myScoreDiv .list .time{
+    width: 50%;
+}
+.myScoreDiv .list .score{
+    width: 50%;
+}
+.myScoreDiv .listHeader{
+    display: flex;
+    display: -webkit-flex;
+    font-size: 26px;
+    background-color: #fff160;
+    height: 65px;
+    line-height: 65px;
+}
+.myScoreDiv ul{
+    font-size: 28px;
+    height: 555px;
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
+}
+.myScoreDiv li{
+    display: flex;
+    display: -webkit-flex;
+    height: 70px;
+    line-height: 70px;
+}
+.myScoreDiv li:nth-child(odd){
+    background-color: #ffffff;
+}
+.myScoreDiv li:nth-child(even){
+    background-color: #fffac7;
+}
+
+
+/*手机号确认*/
+.setPhoneDiv{
+    display: none;
+    position: absolute;
+    z-index: 6;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: -200px auto 0;
+    width: 630px;
+}
+.setPhoneDiv .borderTitle{
+    background-image: url("../images/user/user.png");
+    background-position: -550px -180px;
+}
+.setPhoneDiv .content{
+    width: 535px;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+.setPhoneDiv .phoneNb{
+    border-radius: 10px;
+    border: 1px solid #a14909;
+    height: 90px;
+    width: 440px;
+    color: #d65d18;
+    padding-left: 30px;
+    font-size: 30px;
+}
+.setPhoneDiv .tips{
+    color: #a14909;
+    font-size: 22px;
+    text-indent: 30px;
+    margin: 20px auto 0;
+    width: 430px;
+    text-align: left;
+    line-height: 36px;
+}
+.setPhoneDiv input::-webkit-input-placeholder{
+    color:#d65d18;
+}
+.setPhoneDiv input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    color:#d65d18;
+}
+.setPhoneDiv input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    color:#d65d18;
+}
+.setPhoneDiv input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+    color:#d65d18;
+}
+
+/*我的奖品*/
+.myPrizesDiv{
+    display: none;
+    position: absolute;
+    z-index: 6;
+    top: 50%;
+    left: 0;
+    right: 0;
+    /*margin: -350px auto 0;*/
+    margin: -350px auto 0;
+    width: 630px;
+}
+.myPrizesDiv .borderTitle{
+    background-image: url("../images/user/user.png");
+    background-position: -1625px -0px;
+}
+.myPrizesDiv .content{
+    width: 535px;
+    margin: auto;
+    padding-top: 25px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+.myPrizesDiv .prizeList .prize{
+    width: 445px;
+    height: 151px;
+    margin: 0 auto 15px;
+    background-image: url("../images/user/user.png");
+    position: relative;
+}
+.myPrizesDiv .prizeList .prize p{
+    color: #d65d18;
+    font-size: 16px;
+    position: absolute;
+    top: 80px;
+    left: 148px;
+    width: 240px;
+    text-align: left;
+    line-height: 24px;
+}
+.myPrizesDiv .prizeList .prize1{
+    background-position: -2240px -450px;
+}
+.myPrizesDiv .prizeList .prize1 p{
+    margin-top: 6px;
+}
+.myPrizesDiv .prizeList .prize2{
+    background-position: -1720px -450px;
+}
+.myPrizesDiv .prizeList .prize3{
+    background-position: -1180px -450px;
+    position: relative;
+}
+.myPrizesDiv .prizeList .prize3 span{
+    color: #6eb43a;
+}
+.myPrizesDiv .prizeList .noPrize{
+    color: #d65d18;
+    font-size: 50px;
+    height: 450px;
+    line-height: 450px;
+    text-align: center;
+}
+.myPrizesDiv .borderIsok1{
+    background-image: url("../images/boderImg/isOkBtn1.png");
+    background-repeat: no-repeat;
+    width: 250px;
+    height: 72px;
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+}
+
+/*领奖二维码*/
+.prizesQRcodeDiv{
+    display: none;
+    position: absolute;
+    z-index: 6;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: -280px auto 0;
+    width: 630px;
+}
+.prizesQRcodeDiv .borderTitle{
+    background-image: url("../images/user/user.png");
+    background-position: -1625px 0;
+}
+.prizesQRcodeDiv .content{
+    width: 535px;
+    margin: auto;
+    padding-bottom: 20px;
+    padding-top: 25px;
+    text-align: center;
+}
+.prizesQRcodeDiv .prizeQRcodeBg{
+    width: 328px;
+    height: 328px;
+    margin: auto;
+    position: relative;
+    background-color: #ffffff;
+    padding: 30px;
+}
+.prizesQRcodeDiv .writtenOffAfter{
+    position: absolute;
+    width: 298px;
+    height: 165px;
+    top: 50%;
+    left: 50%;
+    margin-top: -82px;
+    margin-left: -149px;
+    background-image: url("../images/user/user.png");
+    background-position: 0 -1800px;
+}
+.prizesQRcodeDiv .tips{
+    color: #d65d18;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    margin-top: 25px;
+}
+
+/*填写收货信息*/
+.setAddressDiv{
+    display: none;
+    position: absolute;
+    z-index: 6;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: -350px auto 0;
+    width: 630px;
+}
+.setAddressDiv .borderTitle{
+    background-image: url("../images/user/user.png");
+    background-position: -1070px 0;
+}
+.setAddressDiv .content{
+    width: 535px;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+.setAddressDiv input{
+    border-radius: 10px;
+    border: 1px solid #a14909;
+    height: 90px;
+    width: 410px;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #d65d18;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+.setAddressDiv textarea{
+    border-radius: 10px;
+    border: 1px solid #a14909;
+    height: 70px;
+    width: 410px;
+    color: #d65d18;
+    padding: 30px 30px;
+    font-size: 30px;
+}
+.setAddressDiv .tips{
+    color: #a14909;
+    font-size: 22px;
+    text-indent: 30px;
+    margin: 20px auto 0;
+    width: 430px;
+    text-align: left;
+    line-height: 36px;
+}
+.setAddressDiv input::-webkit-input-placeholder,.setAddressDiv textarea::-webkit-input-placeholder{
+    color:#d65d18;
+}
+.setAddressDiv input::-moz-placeholder,.setAddressDiv textarea::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    color:#d65d18;
+}
+.setAddressDiv input:-moz-placeholder,.setAddressDiv textarea:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    color:#d65d18;
+}
+.setAddressDiv input:-ms-input-placeholder,.setAddressDiv textarea:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+    color:#d65d18;
+}
+
+/*活动结束*/
+.activityOverDiv{
+    display: none;
+    position: absolute;
+    z-index: 6;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: -250px auto 0;
+    width: 630px;
+}
+.activityOverDiv .borderTitle{
+    background-image: url("../images/user/user.png");
+    background-position: -530px 0;
+}
+.activityOverDiv .content{
+    width: 535px;
+    margin: auto;
+    padding-bottom: 100px;
+    padding-top: 25px;
+    text-align: center;
+}
+.activityOverDiv .content .tips{
+    color: #d65d18;
+    min-height: 150px;
+    border: 1px solid #a14909;
+    font-size: 26px;
+    text-indent: 30px;
+    width: 385px;
+    padding: 40px;
+    margin: auto;
+    border-radius: 30px;
+    text-align: left;
+    line-height: 50px;
+    font-weight: bold;
+    background-color: #ffffff;
+}
+
+/*第一次进入游戏*/
+.oneGameDiv{
+    display: none;
+    position: absolute;
+    z-index: 6;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: -250px auto 0;
+    width: 630px;
+}
+.oneGameDiv .borderTitle{
+    background-image: url("../images/all/all.png");
+    background-position: -1850px -2600px;
+}
+.oneGameDiv .content{
+    width: 535px;
+    margin: auto;
+    padding-bottom: 100px;
+    padding-top: 25px;
+    text-align: center;
+}
+.oneGameDiv .content .tips{
+    color: #d65d18;
+    min-height: 150px;
+    border: 1px solid #a14909;
+    font-size: 26px;
+    text-indent: 30px;
+    width: 385px;
+    padding: 40px;
+    margin: auto;
+    border-radius: 30px;
+    text-align: left;
+    line-height: 50px;
+    font-weight: bold;
+    background-color: #ffffff;
+}
+
+
+/*分数效果*/
+.canvasContent .scoreEffectDiv{
+    position: absolute;
+    background-image: url("../images/user/user.png");
+    width: 443px;
+    height: 179px;
+    display: none;
+    z-index: 6;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: -50px auto 0;
+}
+/*分数*/
+.canvasContent .stepScoreDiv{
+    position: absolute;
+    display: none;
+    width: 320px;
+    height: 125px;
+    z-index: 6;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: -50px auto 0;
+}
+.canvasContent .stepScoreDiv .content{
+    width: 320px;
+    height: 125px;
+    display: -webkit-flex;
+    display: flex;
+    justify-content:center;
+}
+.canvasContent .stepScoreDiv .content div{
+    background-image: url("../images/user/user.png");
+    width: 80px;
+    height: 125px;
+}
+.canvasContent .stepScoreDiv .div1{
+    background-position: -1200px -1000px;
+}
+
+/*游戏结束*/
+.gameOverDiv{
+    display: none;
+    position: absolute;
+    z-index: 6;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: -250px auto 0;
+    width: 630px;
+}
+.gameOverDiv .borderTitle{
+    background-image: url("../images/all/all.png");
+    background-position: -1200px -2600px;
+}
+.gameOverDiv .content{
+    width: 535px;
+    margin: auto;
+    padding-bottom: 100px;
+    padding-top: 25px;
+    text-align: center;
+}
+.gameOverDiv .content .tips{
+    color: #d65d18;
+    min-height: 150px;
+    border: 1px solid #a14909;
+    font-size: 26px;
+    width: 385px;
+    padding: 40px;
+    margin: auto;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
+    background-color: #ffffff;
+}
+.gameOverDiv .content .tips .score{
+    margin-top: 30px;
+    font-size: 80px;
+    text-align: center;
+}
+
+/*没有机会了*/
+.noChanceDiv{
+    display: none;
+    position: absolute;
+    z-index: 6;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: -250px auto 0;
+    width: 630px;
+}
+.noChanceDiv .borderTitle{
+    background-image: url("../images/all/all.png");
+    background-position: -1850px -2600px;
+}
+.noChanceDiv .content{
+    width: 535px;
+    margin: auto;
+    padding-bottom: 100px;
+    padding-top: 25px;
+    text-align: center;
+}
+.noChanceDiv .content .tips{
+    color: #d65d18;
+    min-height: 150px;
+    border: 1px solid #a14909;
+    font-size: 26px;
+    text-indent: 30px;
+    width: 385px;
+    padding: 40px;
+    margin: auto;
+    border-radius: 30px;
+    text-align: left;
+    line-height: 50px;
+    font-weight: bold;
+    background-color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+{
+  "chanceNbDiv":{
+    "sx": 0,
+    "sy": 0,
+    "cols": 1,
+    "tilew": 244,
+    "tileh": 116,
+    "frames": 1
+  },
+  "chanceNb":{
+    "sx": 0,
+    "sy": 120,
+    "cols": 4,
+    "tilew": 47,
+    "tileh": 34,
+    "frames": 4
+  }
+}

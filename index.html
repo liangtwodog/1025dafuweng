@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1025坚果寻宝大作战</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <script src='./js/jquery-1.11.3.min.js'></script>
+    <script src='https://res.fibodata.com/data/fibosdk.min.js'></script>
+    <script src='https://res.wx.qq.com/open/js/jweixin-1.2.0.js'></script>
+    <script src='./api/apiConfig.js'></script>
+    <script src='./api/indexApi.js'></script>
+    <script src='./js/moment.js'></script>
+    <script src='./js/common.js?v=1.2'></script>
+    <script src='./js/quintusAll.js'></script>
+    <script type="text/javascript" src="./js/qrcode.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body style="padding: 0;margin: 0;overflow: hidden;" >
+<div class="bodyBg body">
+    <div class="myBgSscale">
+        <div class="myBg">
+            <div class="ferrisWheel bg" id="ferrisWheel">
+                <img src="images/all/ferrisWheel.gif">
+            </div>
+            <div class="tree bg" id="tree">
+                <img src="images/all/tree.png">
+            </div>
+        </div>
+    </div>
+    <div id="curtain" class="curtain"></div>
+    <div class="zoomContent">
+        <div class="indexContent">
+            <div class="logoimg"></div>
+            <div class="title"></div>
+            <div class="guomeimei"></div>
+            <a class="startBtn"></a>
+            <div class="btnList">
+                <a class="btn gameDescriptionBtn"></a>
+                <a class="btn myPrizesBtn"></a>
+                <a class="btn nationalRankingsBtn"></a>
+            </div>
+        </div>
+        <div class="gameDescriptionDiv">
+            <div class="myborder">
+                <div class="headerDiv"></div>
+                <div class="contentDiv">
+                    <div class="content">
+                        <a class="btn descriptionBtn">玩法</a>
+                        <a class="btn prizeBtn">奖品</a>
+                        <div class="gameDescriptionContent">
+                            <ul>
+                                <li class="liLine"><a>1</a>点击“开始游戏”进入H5手游页面，点击右下角“ <span class="spanColor">GO</span> ”，掷出的点数决定果美美移动到的格子位置，<span class="spanColor">游戏分数为色子点数×10</span>；注意带有金币的格子都有“奖励”或“惩罚”，分数也会做对应变化；截止到<span class="spanColor">10.15下午六点</span>，分数排行榜全国<span class="spanColor">前100名</span>有现金奖励或产品奖励；</li>
+                                <li class="liLine"><a>2</a>如果<span class="spanColor">第一次</span>踩到“面膜”格子，则获得果本面膜1片，可至就近果本门店兑换。同时奖品核销时将触发一次抽奖机会，玩家有机会获得果本新品舒润弹滑面膜礼盒；（玩家有且仅可获得并核销面膜1片，后面再踩到面膜格子将只能增加游戏分数）；</li>
+                                <li class="liLine"><a>3</a>如果有幸踩到带有“  <span class="spanColor">？</span>”的格子，则有机会获得果本新品果油御享珍爱礼盒、苹果手机X、Ipad等豪华大奖；（获得豪华大奖请根据相关提示填写个人信息，便于活动结束后奖品邮寄）</li>
+                                <li class="liLine"><a>4</a>活动期间每天<span class="spanColor">每小时可掷三轮色子，每轮可掷三次</span>。色子数为0时本轮游戏结束，请下个小时继续参与。若玩家在游戏途中退出游戏，则视为已结束一轮游戏，并且该轮游戏分数为0；</li>
+                                <li class="liLine"><a>5</a>手游活动时间为<span class="spanColor">2018年10月9日9点—10月15日18点</span>；面膜奖品核销时间为<span class="spanColor">10月9日—10月15日</span>；（<span class="spanColor">活动期间，可在每天早7点—晚23点</span>时间内进行游戏，非此时段所得游戏分数不累积到总分数）</li>
+                            </ul>
+                        </div>
+                        <div class="gamePrizeContent">
+                            <ul>
+                                <li><span class="span26">奖励一：</span><span class="spanColor span22">(10月15日18点实时分数总排行榜)</span></li>
+                                <li class="liLine"><a>1</a>第1名----------<span class="spanColor1">3888</span>元现金</li>
+                                <li class="liLine"><a>2</a>第2名----------<span class="spanColor1">1888</span>元现金</li>
+                                <li class="liLine"><a>3</a>第3名----------<span class="spanColor1">888</span>元现金</li>
+                                <li class="liLine"><a>4</a>第4-10名-----<span class="spanColor1">388</span>元现金</li>
+                                <li class="liLine"><a>5</a>第11-50名---果本新品舒润弹滑礼盒</li>
+                                <li class="liLine"><a>6</a>第51-100名-果本新品果实精华油面膜1盒</li>
+                                <li style="margin: 20px auto;"><span class="span26">奖励二：</span><span class="spanColor span22">(参与即可超大概率获得果本面膜一片)</span></li>
+                                <li><span class="span22">备注：请获得面膜后请立即到就近果本门店核销兑换（核销面膜截止日期为10.15晚24点）；核销面膜时将触发1次抽奖机会，有机会获得果本新品舒润弹滑面膜礼盒等大奖</span></li>
+                                <li style="margin-top: 20px;margin-bottom: 0"><span class="span26">奖励三：</span></li>
+                                <li style="text-indent: 40px">踩中带有“  ？”格子，有机会获得果本新品果油御享珍爱礼盒、苹果手机X、Ipad等豪华大奖</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottomDiv"></div>
+                <div class="borderTitle"></div>
+                <div class="borderClose"></div>
+                <div class="borderIsok"></div>
+            </div>
+        </div>
+        <div class="nationalRankingsDiv">
+            <div class="myborder">
+                <div class="headerDiv"></div>
+                <div class="contentDiv">
+                    <div class="content">
+                        <p class="titleTips">排名每小时更新一次</p>
+                        <div class="userInfo">
+                            <div class="rankings">
+                                <p>当前排名：<span>10000</span></p>
+                            </div>
+                            <div class="allScore">
+                                <p>累计分数：<span>0</span></p>
+                            </div>
+                            <div class="myScoreBtn">
+
+                            </div>
+                        </div>
+                        <div class="list">
+                            <div class="listHeader">
+                                <div class="placing"><p>名次</p></div>
+                                <div class="headerImg"><p>头像</p></div>
+                                <div class="userName"> <p>昵称</p></div>
+                                <div class="score"> <p>分数</p></div>
+                            </div>
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottomDiv"></div>
+                <div class="borderTitle"></div>
+                <div class="borderClose"></div>
+            </div>
+        </div>
+        <div class="myScoreDiv">
+            <div class="myborder">
+                <div class="headerDiv"></div>
+                <div class="contentDiv">
+                    <div class="content">
+                        <p class="title">总分：0</p>
+                        <div class="list">
+                            <div class="listHeader">
+                                <div class="time"> <p>日期</p></div>
+                                <div class="score"> <p>分数</p></div>
+                            </div>
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottomDiv"></div>
+                <div class="borderTitle"></div>
+                <div class="borderClose"></div>
+                <div class="borderIsok"></div>
+            </div>
+        </div>
+        <div class="setPhoneDiv">
+            <div class="myborder">
+                <div class="headerDiv"></div>
+                <div class="contentDiv">
+                    <div class="content">
+                        <input type="tel" class="phoneNb" placeholder="请输入手机号">
+                        <p class="tips">手机号将作为获奖凭证，请正确填写本人手机号</p>
+                    </div>
+                </div>
+                <div class="bottomDiv"></div>
+                <div class="borderTitle"></div>
+                <div class="borderClose"></div>
+                <div class="borderIsok"></div>
+            </div>
+        </div>
+        <div class="myPrizesDiv">
+            <div class="myborder">
+                <div class="headerDiv"></div>
+                <div class="contentDiv">
+                    <div class="content">
+                        <ul class="prizeList"></ul>
+                    </div>
+                </div>
+                <div class="bottomDiv"></div>
+                <div class="borderTitle"></div>
+                <div class="borderClose"></div>
+                <div class="borderIsok"></div>
+                <div class="borderIsok1"></div>
+            </div>
+        </div>
+        <div class="prizesQRcodeDiv">
+            <div class="myborder">
+                <div class="headerDiv"></div>
+                <div class="contentDiv">
+                    <div class="content">
+                        <div class="prizeQRcodeBg" >
+                            <div id="prizeQRcode"></div>
+                            <div class="writtenOffAfter"></div>
+                        </div>
+                        <p class="tips">请到附近果本门店，凭二维码领取面膜！</p>
+                    </div>
+                </div>
+                <div class="bottomDiv"></div>
+                <div class="borderTitle"></div>
+                <div class="borderClose"></div>
+            </div>
+        </div>
+        <div class="setAddressDiv">
+            <div class="myborder">
+                <div class="headerDiv"></div>
+                <div class="contentDiv">
+                    <div class="content">
+                        <input type="text" class="userName" placeholder="请输入联系人姓名">
+                        <input type="tel" class="phoneNb" placeholder="请输入您联系方式">
+                        <textarea class="userAddress" placeholder="请填写可以收到快递的详细地址，包括省市区街道等信息"></textarea>
+                        <p class="tips">请正确填写以上收货信息，工作人员将在活动结束前安排奖品发放。获奖24小时后不可再更改收货信息！</p>
+                    </div>
+                </div>
+                <div class="bottomDiv"></div>
+                <div class="borderTitle"></div>
+                <div class="borderClose"></div>
+                <div class="borderIsok"></div>
+            </div>
+        </div>
+        <div class="activityOverDiv">
+            <div class="myborder">
+                <div class="headerDiv"></div>
+                <div class="contentDiv">
+                    <div class="content">
+                        <div class="tips">“活动已结束，游戏不再结算分数和派发奖品~</div>
+                    </div>
+                </div>
+                <div class="bottomDiv"></div>
+                <div class="borderTitle"></div>
+                <div class="borderClose"></div>
+                <div class="borderIsok"></div>
+            </div>
+        </div>
+        <div class="oneGameDiv">
+            <div class="myborder">
+                <div class="headerDiv"></div>
+                <div class="contentDiv">
+                    <div class="content">
+                        <div class="tips">每天早7点到晚11点，每小时可进入三回游戏，每回可掷三次色子，分数累计有额外大奖，寻宝之旅现在开启！</div>
+                    </div>
+                </div>
+                <div class="bottomDiv"></div>
+                <div class="borderTitle"></div>
+                <div class="borderClose"></div>
+                <div class="borderIsok"></div>
+            </div>
+        </div>
+        <div class="myTipsDiv" id="myTipsDiv1">
+            <div class="myborder">
+                <div class="headerDiv"></div>
+                <div class="contentDiv">
+                    <div class="content">
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="bottomDiv"></div>
+                <div class="borderTitle"></div>
+                <div class="borderClose"></div>
+                <div class="borderIsok"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="quintus_container">
+    <canvas id="gameContainer" data-zoom="1" width="750" height="1334"></canvas>
+</div>
+
+<div class="canvasContent body">
+    <div class="curtain"></div>
+    <div class="zoomContent">
+        <div class="luckDraw">
+            <div class="luckDrawContent">
+                <div class="luckDrawLamp">
+                    <div class="luckDrawPrize"></div>
+                </div>
+            </div>
+        </div>
+        <div class="winningPrizeDiv">
+            <div class="myborder">
+                <div class="headerDiv"></div>
+                <div class="contentDiv">
+                    <div class="content">
+                        <div class="prizeContent">
+                            <div class="prize"><div class="prizeImg"></div></div>
+                            <div class="prizeIntroduce">恭喜成为果本幸运儿，获得珍爱套盒一份！请去“我的奖品”页面领取</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottomDiv"></div>
+                <div class="borderTitle"></div>
+                <div class="borderClose"></div>
+                <div class="borderIsok"></div>
+            </div>
+        </div>
+        <div class="myTipsDiv" id="myTipsDiv">
+            <div class="myborder">
+                <div class="headerDiv"></div>
+                <div class="contentDiv">
+                    <div class="content">
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="bottomDiv"></div>
+                <div class="borderTitle"></div>
+                <div class="borderClose"></div>
+                <div class="borderIsok"></div>
+            </div>
+        </div>
+        <div class="scoreEffectDiv"></div>
+        <div class="stepScoreDiv">
+            <div class="content">
+                <div class="div1"></div>
+                <div class="div2"></div>
+                <div class="div3"></div>
+                <div class="div4"></div>
+            </div>
+        </div>
+        <div class="gameOverDiv">
+            <div class="myborder">
+                <div class="headerDiv"></div>
+                <div class="contentDiv">
+                    <div class="content">
+                        <div class="tips">
+                            <p>游戏结束！本轮游戏得分</p>
+                            <p class="score">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottomDiv"></div>
+                <div class="borderTitle"></div>
+                <div class="borderClose"></div>
+                <div class="borderIsok"></div>
+            </div>
+        </div>
+        <div class="noChanceDiv">
+            <div class="myborder">
+                <div class="headerDiv"></div>
+                <div class="contentDiv">
+                    <div class="content">
+                        <div class="tips">每小时最多玩三轮游戏，每轮可掷三次色子，请下个小时再来喔</div>
+                    </div>
+                </div>
+                <div class="bottomDiv"></div>
+                <div class="borderTitle"></div>
+                <div class="borderClose"></div>
+                <div class="borderIsok"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="loadingDiv" class="loadingDiv body">
+    <div class="curtain"></div>
+    <div class="content">
+        <img src="images/loading.gif">
+        <p>已加载0%，请耐心等待....</p>
+    </div>
+</div>
+<div id="myloading" class="loadingDiv body">
+    <div class="curtain"></div>
+    <div class="content">
+        <img src="images/loading.gif">
+        <p>拼命加载中，请耐心等待....</p>
+    </div>
+</div>
+<div class="horizontalScreenHint body">
+    <div class="horizontalScreenHintDiv">
+        <img src="images/hengPing.png">
+        <p>为了更好的体验,为了开发的幸福,为了世界的和平,请各位大帅哥小姐姐锁定竖屏观看及操作本页面</p>
+    </div>
+</div>
+</body>
+
+<script>
+    var GameCanvasHeight = $(window).height();
+    var GameCanvasWidth = $(window).width();
+    var gameScale = 1;
+    var quintusScale = 0.5;
+    setGameSize();
+    function setGameSize() {
+        if(GameCanvasWidth/GameCanvasHeight > 750/1334){
+            quintusScale = GameCanvasHeight/1334
+            if(quintusScale*750 < GameCanvasWidth){
+                quintusScale = GameCanvasWidth/750;
+                $("#quintus_container").css({
+                    "zoom": quintusScale*100 +  "%"
+                });
+                if(quintusScale*1170 > GameCanvasHeight){
+                    gameScale = 1/quintusScale*GameCanvasHeight/1200
+                    console.log(gameScale)
+                }
+            }else {
+                $("#quintus_container").css({
+                    "zoom": quintusScale*100 +  "%"
+                });
+            }
+            $("#gameContainer").css({
+                marginLeft: (GameCanvasWidth - quintusScale*750)/quintusScale,
+                marginTop: (GameCanvasHeight -quintusScale*1334)/quintusScale/2
+            })
+            $("#gameContainer").attr({
+                "data-zoom":quintusScale
+            })
+        }else {
+            quintusScale = GameCanvasWidth/750
+            if(quintusScale*1334< GameCanvasHeight){
+                quintusScale = GameCanvasHeight/1334
+                $("#quintus_container").css({
+                    "zoom": quintusScale*100 +  "%"
+                });
+                if(quintusScale*700 > GameCanvasWidth){
+                    gameScale = 1/quintusScale*GameCanvasWidth/730
+                }
+            }else {
+                $("#quintus_container").css({
+                    "zoom": quintusScale*100 +  "%"
+                });
+            }
+            $("#gameContainer").css({
+                marginLeft: (GameCanvasWidth - quintusScale*750)/quintusScale,
+                marginTop: (GameCanvasHeight -quintusScale*1334)/quintusScale/2
+            })
+            $("#quintus_container").attr("data-zoom", quintusScale);
+            $("#gameContainer").attr({
+                "data-zoom":quintusScale
+            })
+        }
+    }
+    var player = ''; // 果美美对象
+    var chanceNb = ''; //骰子机会对象
+    var goBtnClick = false;// 果美美是否跑到中
+    var gameScore = ''; //游戏分数
+    var diceObj = '';//骰子的舞台对象
+    var playerIndex = 0;
+    var gameInfo = ''; // 游戏信息
+    var gameResult = ''; // 每次摇骰子的结果
+    // 是否中面膜
+    var havePrize = 0;
+    // 是否中珍爱套盒
+    var havePrize1 = 0;
+    var Q = Quintus({ development: true }).include("Sprites, Scenes, Audio, Touch, Anim, UI");
+    Q.enableSound();
+    Q.setup("gameContainer").touch(Q.SPRITE_ALL);
+    Q.load(['./game/game.png', "game.json",'./game/player.png', "player.json",'./game/ferrisWheel.png', "ferrisWheel.json",'./all/logo.png','./game/dice.png', "dice.json","addScore.mp3","bgm.mp3","dice.mp3","luckDraw.mp3","gameOver.mp3"],function() {
+        Q.compileSheets("./game/player.png","player.json");
+        Q.compileSheets("./game/ferrisWheel.png","ferrisWheel.json");
+        Q.compileSheets("./game/game.png","game.json");
+        Q.compileSheets("./game/dice.png","dice.json");
+        Q.animations('ferrisWheel', {
+            ferrisWheelLoop: { frames: [16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0], loop:true, rate: 1/6 }
+        });
+        Q.animations('dice', {
+            dice1: { frames: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19], loop:false, rate: 1/10, trigger:"setStep"},
+            dice2: { frames: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,20], loop:false, rate: 1/10, trigger:"setStep"},
+            dice3: { frames: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,21], loop:false, rate: 1/10, trigger:"setStep"},
+            dice4: { frames: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,22], loop:false, rate: 1/10, trigger:"setStep"},
+            dice5: { frames: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,23], loop:false, rate: 1/10, trigger:"setStep"},
+            dice6: { frames: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,24], loop:false, rate: 1/10, trigger:"setStep"},
+        });
+        $("#quintus_container").hide();
+        Q.stageScene("level");
+        $(".indexContent .startBtn").on("click",function () {
+            if(parseInt(window.localStorage.getItem('guoben1025')) !== 1){
+                window.localStorage.setItem('guoben1025', 1);
+                $(".oneGameDiv").show();
+                $("#curtain").show();
+            }else {
+                starGame()
+            }
+        })
+    }, {
+        progressCallback: function (loaded, total) {
+            $("#loadingDiv .content p").html("已加载"+Math.floor(loaded / total * 100) + "%，请耐心等待....");
+            if(loaded === 14){
+                $("#loadingDiv").hide();
+            }
+        }
+    });
+    Q.Sprite.extend("myPlayer",{
+        init:function(p) {
+            this._super(p,{
+                sheet:"myPlayer",
+                frame:0,
+                scale:gameScale,
+                x: 750/2 - 280,
+                y: 1334/2 - 270,
+                z:40,
+                speed:5,
+                targetStepObj: {},//最终目标
+                stepObj: {},// 过程目标
+                stepGo: false
+            });
+        },
+        myStep: function (targetStepObj) {
+            this.targetStepObj = targetStepObj;
+            if(this.targetStepObj.x === this.p.x && this.targetStepObj.y === this.p.y){
+                setScoreTitle(gameResult.position,gameResult.prize);
+                this.stepGo = false;
+                return 0;
+            }else {
+                playerIndex = (playerIndex + 1)%16;
+                this.stepObj = setGezi(playerIndex);
+                if(this.stepObj.x === this.p.x && this.stepObj.y === this.p.y){
+                    return 0;
+                }else {
+                    if(parseInt(this.stepObj.x) === parseInt(this.p.x)){
+                        if(this.stepObj.y - this.p.y > 0){
+                            this.p.frame = 1;
+                        }else if(this.stepObj.y - this.p.y < 0){
+                            this.p.frame = 3;
+                        }
+                    }else if(parseInt(this.stepObj.y) === parseInt(this.p.y)) {
+                        if(this.stepObj.x - this.p.x > 0){
+                            this.p.frame = 0;
+                        }else if(this.stepObj.x - this.p.x < 0){
+                            this.p.frame = 2;
+                        }
+                    }
+                }
+                this.stepGo = true;
+            }
+        },
+        step: function(dt) {
+            if(this.stepGo){
+                switch (parseInt(this.p.frame)){
+                    case 0:
+                        if( this.stepObj.x < this.p.x){
+                            this.p.x = this.stepObj.x;
+                            this.myStep(this.targetStepObj)
+                        }else {
+                            this.p.x += this.p.speed;
+                        }
+                        break;
+                    case 2:
+                        if( this.stepObj.x > this.p.x){
+                            this.p.x = this.stepObj.x;
+                            this.myStep(this.targetStepObj);
+                        }else {
+                            this.p.x -= this.p.speed;
+                        }
+                        break;
+                    case 1:
+                        if( this.stepObj.y < this.p.y){
+                            this.p.y = this.stepObj.y;
+                            this.myStep(this.targetStepObj);
+                        }else {
+                            this.p.y += this.p.speed;
+                        }
+                        break;
+                    case 3:
+                        if( this.stepObj.y > this.p.y){
+                            this.p.y = this.stepObj.y;
+                            this.myStep(this.targetStepObj);
+                        }else {
+                            this.p.y -= this.p.speed;
+                        }
+                        break;
+                }
+            }
+        }
+    });
+    Q.Sprite.extend("dice",{
+        init:function(p) {
+            this._super(p,{
+                sprite: "dice",
+                sheet: "dice",
+                scale:gameScale,
+                frame:25,
+                x: 750/2,
+                y: 1334/2 -160*gameScale,
+                z:42,
+            });
+            this.add("animation");
+            this.on("setStep");
+        },
+        setStep: function(){
+            diceSound.play();
+            player.myStep(setGezi((playerIndex + gameResult.step)%16));
+        }
+    });
+    Q.Sprite.extend("chanceNbDiv",{
+        init:function(p) {
+            this._super(p,{
+                sheet:"chanceNbDiv",
+                frame:0,
+                scale:gameScale,
+                x: 750/2 + -190*gameScale,
+                y: 1334/2 + 523*gameScale,
+                z:20,
+            });
+        },
+    });
+    Q.Sprite.extend("chanceNb",{
+        init:function(p) {
+            this._super(p,{
+                sheet:"chanceNb",
+                frame:3,
+                scale:gameScale,
+                x: 750/2 + -140*gameScale,
+                y: 1334/2 + 523*gameScale,
+                z:30,
+            });
+        },
+    });
+    Q.Sprite.extend("guidao",{
+        init:function(p) {
+            this._super(p,{
+                sheet:"guidao",
+                frame:0,
+                scale:gameScale,
+                x: 750/2,
+                y: 1334/2 + 60*gameScale,
+                z:30,
+            });
+        },
+    });
+    Q.Sprite.extend("beijing",{
+        init:function(p) {
+            this._super(p,{
+                sheet:"beijing",
+                frame:0,
+                x: 750/2,
+                y: 1334/2 ,
+                z:10,
+            });
+        },
+    });
+    Q.Sprite.extend("tree",{
+        init:function(p) {
+            this._super(p,{
+                sheet: "tree",
+                frame: 0,
+                defaultDirection: 'left',
+                x: 750/2 - 325,
+                y: 1334/2 + 285,
+                z:12,
+            });
+        }
+    });
+    Q.Sprite.extend("ferrisWheel",{
+        init:function(p) {
+            this._super(p,{
+                sprite: "ferrisWheel",
+                sheet: "ferrisWheel",
+                frame:0,
+                x: 750/2 + -215,
+                y: 1334/2 + 85,
+                z:11,
+            });
+            this.add("animation");
+        }
+    });
+    Q.scene("level",function(stage) {
+        var playerPosition = setGezi(0);
+        stage.insert(new Q.UI.Button({ asset:'./all/logo.png', x: 750/2 - 285*gameScale, scale:gameScale, y:  1334/2 - 550*gameScale, z:21}));
+        var goBtn = stage.insert(new Q.UI.Button({ sheet: "goBtn", scale:gameScale, frame: 0, x: 750/2 + 224*gameScale, y: 1334/2 + 480*gameScale, z:20, px:100, py:100}));
+        stage.insert(new Q.beijing());
+        var myferrisWheel = stage.insert(new Q.ferrisWheel());
+        myferrisWheel.play("ferrisWheelLoop");
+        stage.insert(new Q.tree());
+        stage.insert(new Q.guidao());
+        stage.insert(new Q.chanceNbDiv());
+        diceObj = stage.insert(new Q.dice());
+        chanceNb = stage.insert(new Q.chanceNb());
+        player = stage.insert(new Q.myPlayer({x: playerPosition.x, y: playerPosition.y}));
+        goBtn.on("click",function() {
+            // gameInfo = [
+            //     {
+            //         position: 3,
+            //         prize: 0,
+            //         score: 30,
+            //         scoreesSum: 30,
+            //         step: 3,
+            //         playAgain: {
+            //             gameArray: [
+            //               {
+            //                 position: 4,
+            //                 prize: 1,
+            //                 score: 5,
+            //                 scoreesSum: 35,
+            //                 step: 1
+            //               }
+            //             ]
+            //       }
+            //     },
+            //     {
+            //         position: 5,
+            //         prize: 10,
+            //         score: 20,
+            //         scoreesSum: 55,
+            //         step: 1
+            //     },
+            //     {
+            //         position: 9,
+            //         prize: 0,
+            //         score: 40,
+            //         scoreesSum: 95,
+            //         step: 4
+            //     }
+            // ]
+            if(gameInfo === ''){
+                indexApi.play();
+            }else {
+                if(!goBtnClick){
+                    if(chanceNb.p.frame === 0){
+                        alert("已经没机会了，摇骰子咯");
+                        return 0;
+                    }else {
+                        chanceNb.p.frame = chanceNb.p.frame - 1;
+                        diceRoller(gameInfo[parseInt(2 - chanceNb.p.frame)]);
+                    }
+                }
+            }
+        });
+        var scoreTitle = stage.insert(new Q.UI.Container({
+            x: Q.width/2, y: Q.height/2 - 450*gameScale, fill: "rgba(0,0,0,0.5)", z:20
+        }));
+        scoreTitle.insert(new Q.UI.Button({ x: 0, y: 0, scale:gameScale,
+            sheet: "scoreTitle", frame: 0}))
+        gameScore = scoreTitle.insert(new Q.UI.Text({ x: 0, y: 18,scale:gameScale,
+            label: '0', outlineWidth: '0', size: 78, color: "#98600d" }));
+    });
+    function starGame() {
+        fiboSDK.btnClick("startGameBtn","开始游戏");
+        var type = 3;
+        if(moment().unix() > gameOverTime){
+            type = 1;
+        }else {
+            if(moment().unix() > moment().hour(23).minute(0).second(0).unix()|| moment().unix() < moment().hour(7).minute(0).second(0).unix()){
+                type = 2;
+            }
+        }
+        switch (type){
+            case 1:
+                // 游戏已经结束
+                $(".activityOverDiv").show();
+                $("#curtain").show();
+                break;
+            case 2:
+                // 游戏23:00~7:00分数不统计
+                $("#myTipsDiv1").show();
+                $("#curtain").show();
+                $("#myTipsDiv1 .tips").html("为了同学们能正常作息，健康娱乐！活动在23:00~7:00期间的游戏分数将不纳入分数统计，但是奖品还是正常派发的啦~");
+                break;
+            case 3:
+                try {
+                    bgmSound.play();
+                    gameOverSound.play();
+                    addScoreSound.play();
+                    diceSound.play();
+                    luckDrawSound.play();
+                    gameOverSound.stop();
+                    addScoreSound.stop();
+                    diceSound.stop();
+                    luckDrawSound.stop();
+                }catch (e) {
+                    console.log(e)
+                }
+                playerIndex = 0;
+                fiboSDK.btnClick("startGameBtn","开始游戏");
+                $("#quintus_container").show();
+                $(".bodyBg").hide();
+                break;
+        }
+    }
+    //设置格子
+    function setGezi(type, retuenType) {
+        var geziX = 750/2 - 280*gameScale;
+        var geziY = 1334/2 - 220*gameScale;
+        switch (parseInt(type)){
+            case 0:
+                break;
+            case 1:
+                geziX = geziX + 140*gameScale;
+                break;
+            case 2:
+                geziX = geziX + 140 * 2*gameScale;
+                break;
+            case 3:
+                geziX = geziX + 140 * 3*gameScale;
+                break;
+            case 4:
+                geziX = geziX + 140 * 3*gameScale;
+                geziY = geziY + 140*gameScale;
+                break;
+            case 5:
+                geziX = geziX + 140 * 4*gameScale;
+                geziY = geziY + 140*gameScale;
+                break;
+            case 6:
+                geziX = geziX + 140 * 4*gameScale;
+                geziY = geziY + 140 * 2*gameScale;
+                break;
+            case 7:
+                geziX = geziX + 140 * 4*gameScale;
+                geziY = geziY + 140 * 3*gameScale;
+                break;
+            case 8:
+                geziX = geziX + 140 * 3*gameScale;
+                geziY = geziY + 140 * 3*gameScale;
+                break;
+            case 9:
+                geziX = geziX + 140 * 2*gameScale;
+                geziY = geziY + 140 * 3*gameScale;
+                break;
+            case 10:
+                geziX = geziX + 140 * 2*gameScale;
+                geziY = geziY + 140 * 4*gameScale;
+                break;
+            case 11:
+                geziX = geziX + 140*gameScale;
+                geziY = geziY + 140 * 4*gameScale;
+                break;
+            case 12:
+                geziX = geziX;
+                geziY = geziY + 140 * 4*gameScale;
+                break;
+            case 13:
+                geziX = geziX;
+                geziY = geziY + 140 * 3*gameScale;
+                break;
+            case 14:
+                geziX = geziX;
+                geziY = geziY + 140 * 2*gameScale;
+                break;
+            case 15:
+                geziX = geziX;
+                geziY = geziY + 140*gameScale;
+                break;
+        }
+        if(retuenType === 1){
+            return {
+                x: geziX,
+                y: geziY
+            }
+        }else {
+            return {
+                x: geziX ,
+                y: geziY - 50
+            }
+        }
+    }
+    //摇骰子
+    function diceRoller(data) {
+        gameResult = data;
+        switch (parseInt(gameResult.step)){
+            case 1:
+                diceObj.play("dice1");
+                break;
+            case 2:
+                diceObj.play("dice2");
+                break;
+            case 3:
+                diceObj.play("dice3");
+                break;
+            case 4:
+                diceObj.play("dice4");
+                break;
+            case 5:
+                diceObj.play("dice5");
+                break;
+            case 6:
+                diceObj.play("dice6");
+                break;
+        }
+        goBtnClick = true;
+    }
+    // 设置结果
+    function setResult(resultScore) {
+        var setScoreString = resultScore.toString();
+        $(".canvasContent .stepScoreDiv .div2").css({
+            backgroundPosition: setScoreDiv(setScoreString[0])
+        });
+        if(setScoreString[1] === undefined){
+            $(".canvasContent .stepScoreDiv .div3").hide()
+        }else {
+            $(".canvasContent .stepScoreDiv .div3").show();
+            $(".canvasContent .stepScoreDiv .div3").css({
+                backgroundPosition: setScoreDiv(setScoreString[1])
+            })
+        }
+        if(setScoreString[2] === undefined){
+            $(".canvasContent .stepScoreDiv .div4").hide();
+        }else {
+            $(".canvasContent .stepScoreDiv .div4").show();
+            $(".canvasContent .stepScoreDiv .div4").css({
+                backgroundPosition: setScoreDiv(setScoreString[2])
+            })
+        }
+        $(".canvasContent .curtain").hide();
+        $(".canvasContent .stepScoreDiv").show();
+        $(".canvasContent").show();
+        setTimeout(function () {
+            $(".canvasContent").hide();
+            $(".canvasContent .stepScoreDiv").hide();
+            $(".canvasContent .curtain").show();
+            var nowGameScore = parseInt(gameScore.p.label) + parseInt(resultScore);
+            addScoreSound.play();
+            var mysetInterval = setInterval(function () {
+                if(parseInt(gameScore.p.label) === nowGameScore){
+                    addScoreSound.stop();
+                    clearInterval(mysetInterval);
+                    goBtnClick = false;
+                    if(gameResult.playAgain !== undefined){
+                        diceRoller(gameResult.playAgain.gameArray[0]);
+                    }else {
+                        if(chanceNb.p.frame === 0){
+                            $(".gameOverDiv .score").html(gameScore.p.label);
+                            $(".canvasContent").show();
+                            $(".gameOverDiv").show();
+                            $(".canvasContent .curtain").show();
+                            bgmSound.stop();
+                            gameOverSound.play();
+                            return 0;
+                        }
+                    }
+                }else {
+                    gameScore.p.label = (parseInt(gameScore.p.label) + 1).toString();
+                }
+            },30);
+        }, 1500);
+    }
+    // 设置格子效果
+    function setScoreTitle(type, ScoreNb) {
+        diceObj.p.frame = 37;
+      type = type % 16
+        // +分
+        if(parseInt(type) === 5){
+            switch (parseInt(ScoreNb)){
+                case 10:
+                    // +10
+                    $(".canvasContent .scoreEffectDiv").css({
+                        backgroundPosition: '0 -1400px'
+                    });
+                    break
+                case 20:
+                    $(".canvasContent .scoreEffectDiv").css({
+                        backgroundPosition: '-470px -1400px'
+                    });
+                    break
+                case 30:
+                    $(".canvasContent .scoreEffectDiv").css({
+                        backgroundPosition: '-925px -1400px'
+                    });
+                    break
+            }
+        }
+        if(parseInt(type) === 7){
+            switch (parseInt(ScoreNb)){
+                case 10:
+                    // -10
+                    $(".canvasContent .scoreEffectDiv").css({
+                        backgroundPosition: '-1400px -1400px'
+                    });
+                    break
+                case 20:
+                    $(".canvasContent .scoreEffectDiv").css({
+                        backgroundPosition: '-1920px -1400px'
+                    });
+                    break
+                case 30:
+                    $(".canvasContent .scoreEffectDiv").css({
+                        backgroundPosition: '-2400px -1400px'
+                    });
+                    break
+            }
+        }
+        if(parseInt(type) === 2 || parseInt(type) === 13){
+            //翻倍
+            $(".canvasContent .scoreEffectDiv").css({
+                backgroundPosition: '-1200px -750px'
+            });
+        }
+        if(parseInt(type) === 4 || parseInt(type) === 15){
+            //减半
+            $(".canvasContent .scoreEffectDiv").css({
+                backgroundPosition: '-1800px -750px'
+            });
+        }
+        if(parseInt(type) === 3 || parseInt(type) === 12){
+            //再来一次
+            $(".canvasContent .scoreEffectDiv").css({
+                backgroundPosition: '-2400px -750px'
+            });
+        }
+        if(parseInt(type) === 6 || parseInt(type) === 10 || parseInt(type) === 16){
+            if(parseInt(ScoreNb) === 1){
+                //面膜
+                $(".canvasContent").show();
+                $(".canvasContent .curtain").show();
+                $(".canvasContent .winningPrizeDiv .prizeImg").css({
+                    "background-position": "0px -2410px"
+                });
+                $(".canvasContent .winningPrizeDiv .borderTitle").css({
+                    "background-position": "0px -2600px"
+                });
+                $(".canvasContent .winningPrizeDiv .prizeIntroduce").html('恭喜获得果本面膜一片！请去"我的奖品"页面领取');
+                $(".canvasContent .winningPrizeDiv").show();
+                havePrize = 1;
+                return 0;
+            }else {
+                setResult(gameResult.score);
+                havePrize = 0;
+                return 0;
+            }
+        }
+        if(parseInt(type) === 9){
+            //抽奖
+            $(".canvasContent").show();
+            $(".canvasContent .curtain").show();
+            $(".canvasContent .luckDraw").show();
+            if(parseInt(ScoreNb) === 1){
+                startLuckDraw(2, 0)
+                havePrize1 = 1;
+            }else {
+                startLuckDraw(2, 2)
+                havePrize1 = 0;
+            }
+            return 0;
+        }
+        if(parseInt(type) === 1 || parseInt(type) === 8 || parseInt(type) === 11 || parseInt(type) === 14){
+            setResult(gameResult.score);
+        }else {
+            $(".canvasContent .curtain").hide();
+            $(".canvasContent .scoreEffectDiv").show();
+            $(".canvasContent").show();
+            setTimeout(function () {
+                $(".canvasContent").hide();
+                $(".canvasContent .scoreEffectDiv").hide();
+                $(".canvasContent .curtain").show();
+                setResult(gameResult.score);
+            },1500)
+        }
+    }
+    // 设置分数数字
+    function setScoreDiv(type) {
+        switch (parseInt(type)){
+            case 0:
+                return "-2300px -1000px";
+            case 1:
+                return "-1400px -1000px";
+            case 2:
+                return "-1500px -1000px";
+            case 3:
+                return "-1600px -1000px";
+            case 4:
+                return "-1700px -1000px";
+            case 5:
+                return "-1800px -1000px";
+            case 6:
+                return "-1900px -1000px";
+            case 7:
+                return "-2000px -1000px";
+            case 8:
+                return "-2100px -1000px";
+            case 9:
+                return "-2200px -1000px";
+        }
+    }
+</script>
+<script src='./js/index.js'></script>
+</html>

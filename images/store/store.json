@@ -1,0 +1,74 @@
+{
+  "activityBtn":{
+    "x": 0,
+    "y": 0,
+    "w":480,
+    "h":100
+  },
+  "nationalRankingsBtn":{
+    "x": 500,
+    "y": 0,
+    "w":480,
+    "h":100
+  },
+  "writeOffAward":{
+    "x": 1000,
+    "y": 0,
+    "w":480,
+    "h":100
+  },
+  "extensionBtn":{
+    "x": 1500,
+    "y": 0,
+    "w":480,
+    "h":100
+  },
+  "activityTitle":{
+    "x": 0,
+    "y": 110,
+    "w":518,
+    "h":145
+  },
+  "nationalRankingsTitle":{
+    "x": 520,
+    "y": 110,
+    "w":518,
+    "h":145
+  },
+  "writeOffAwardTitle":{
+    "x": 1040,
+    "y": 110,
+    "w":518,
+    "h":145
+  },
+  "extensionBg":{
+    "x": 1560,
+    "y": 110,
+    "w":630,
+    "h":909
+  },
+  "PrizeBorder":{
+    "x": 0,
+    "y": 265,
+    "w":525,
+    "h":671
+  },
+  "ruleBorder":{
+    "x": 650,
+    "y": 265,
+    "w":525,
+    "h":671
+  },
+  "titleBg":{
+    "x":0,
+    "y":1260,
+    "w":669,
+    "h":445
+  },
+  "writeOffBtn":{
+    "x":-2300,
+    "y": 0,
+    "w":75,
+    "h":72
+  }
+}

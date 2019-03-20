@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1025坚果寻宝大作战</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <script src='./js/jquery-1.11.3.min.js'></script>
+    <script src='./api/apiConfig.js'></script>
+    <script type="text/javascript" src="./js/qrcode.min.js"></script>
+    <script src='https://res.fibodata.com/data/fibosdk.min.js'></script>
+    <script src='https://res.wx.qq.com/open/js/jweixin-1.2.0.js'></script>
+    <script src='./js/moment.js'></script>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/store.css">
+    <script src='./js/common.js'></script>
+</head>
+<body>
+<div class="bodyBg body">
+    <div class="myBgSscale">
+        <div class="myBg">
+            <div class="ferrisWheel bg" id="ferrisWheel">
+                <img src="images/all/ferrisWheel.gif">
+            </div>
+            <div class="tree bg" id="tree">
+                <img src="images/all/tree.png">
+            </div>
+        </div>
+    </div>
+    <div id="curtain" class="curtain"></div>
+    <div class="zoomContent">
+        <div class="indexContent">
+            <div class="logoimg"></div>
+            <div class="title">
+                <p>0</p>
+            </div>
+            <a class="btn activityBtn"></a>
+            <a class="btn nationalRankingsBtn"></a>
+            <a class="btn writeOffAward"></a>
+            <a class="btn extensionBtn"></a>
+        </div>
+        <div class="activityDescriptionDiv">
+            <div class="myborder">
+                <div class="headerDiv"></div>
+                <div class="contentDiv">
+                    <div class="content">
+                        <a class="btn descriptionBtn">玩法</a>
+                        <a class="btn prizeBtn">奖品</a>
+                        <div class="activityDescriptionContent">
+                            <ul>
+                                <li><span>10月9日—15日</span>，10.25“坚果寻宝大作战”手游火热进行中！</li>
+                                <li class="liLine"><a>1</a>前期参与厂家下发的10.25活动报名链接门店，才可参与此次10.25H5手游活动，<span>未报名门店没有相关数据</span></li>
+                                <li class="liLine"><a>2</a>已报名门店转发顾客操作方法为点击首页下方的“推广二维码”生成门店专属推广图片转发顾客，或者点击首页右上角三个点转发按钮，转发顾客参与！<span>（注意：请务必点开本转发大赛H5页面后进行转发，不打开H5直接转发无效!）</span></li>
+                                <li class="liLine"><a>3</a>门店老板在报名参与H5手游时使用的微信号，<span>转发时请使用此微信号进行转发</span>，否则系统无法识别，转发数据不作数。</li>
+                                <li class="liLine"><a>4</a>截止<span>10.15下午六点</span>，转发榜单前100名门店，厂家将把对应奖金给到对应代理商，再由代理商发放至门店</li>
+                            </ul>
+                        </div>
+                        <div class="activityPrizeContent">
+                            <ul>
+                                <li>门店转发前100名奖励:</li>
+                                <li class="liLine"><a>1</a>第1名------------<span>3888</span>元现金</li>
+                                <li class="liLine"><a>2</a>第2名------------<span>1888</span>元现金</li>
+                                <li class="liLine"><a>3</a>第3名------------<span>888</span>元现金</li>
+                                <li class="liLine"><a>4</a>第4-10名--------<span>388元</span>现金</li>
+                                <li class="liLine"><a>5</a>第11-50名-----<span>88.8</span>元现金</li>
+                                <li class="liLine"><a>6</a>第51-100名---<span>38.8</span>元现金</li>
+                                <li>（10.15下午六点最终转发榜排名为准）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottomDiv"></div>
+                <div class="borderTitle"></div>
+                <div class="borderClose"></div>
+                <div class="borderIsok"></div>
+            </div>
+        </div>
+        <div class="nationalRankingsDiv">
+            <div class="myborder">
+                <div class="headerDiv"></div>
+                <div class="contentDiv">
+                    <div class="content">
+                        <p class="titleTips">排名每小时更新一次</p>
+                        <div class="userInfo">
+                            <div class="rankings">
+                                <p class="rankTitle">当前排名：<span>10000</span></p>
+                            </div>
+                            <div class="forwardNb">
+                                <p class="shareAmountTitle">我的转发数：<span>0</span></p>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <div class="listHeader">
+                                <div class="placing"><p>名次</p></div>
+                                <div class="province"><p>省份</p></div>
+                                <div class="headerImg"><p>头像</p></div>
+                                <div class="storeName"> <p>门店</p></div>
+                                <div class="forwardNb"> <p>转发数</p></div>
+                            </div>
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottomDiv"></div>
+                <div class="borderTitle"></div>
+                <div class="borderClose"></div>
+            </div>
+        </div>
+        <div class="writeOffAwardDiv">
+            <div class="myborder">
+                <div class="headerDiv"></div>
+                <div class="contentDiv">
+                    <div class="content">
+                        <div class="writeOffNb">核销总数：<span>0</span></div>
+                        <div class="writeOffOperation">
+                            <a class="writeOffBtn"></a>
+                            <p>点击按钮扫描二维码，核销用户奖品</p>
+                        </div>
+                        <div class="list">
+                            <div class="listHeader">
+                                <div class="headerImg">头像</div>
+                                <div class="userName">昵称</div>
+                                <div class="writeOffType">核销类型</div>
+                                <div class="time">时间</div>
+                            </div>
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottomDiv"></div>
+                <div class="borderTitle"></div>
+                <div class="borderClose"></div>
+            </div>
+        </div>
+        <div class="extensionDiv">
+            <div class="content">
+                <div class="extensionContent">
+                    <p class="storeName"></p>
+                    <div class="QRcode" id="QRcode"></div>
+                </div>
+                <div class="closeBtn"></div>
+                <div class="tips">长按保存图片</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="myloading" class="loadingDiv body">
+    <div class="curtain"></div>
+    <div class="content">
+        <img src="images/loading.gif">
+        <p>拼命加载中，请耐心等待....</p>
+    </div>
+</div>
+<div class="horizontalScreenHint body">
+    <div class="horizontalScreenHintDiv">
+        <img src="images/hengPing.png">
+        <p>为了更好的体验,为了开发的幸福,为了世界的和平,请各位大帅哥小姐姐锁定竖屏观看及操作本页面</p>
+    </div>
+</div>
+<div class="canvasContent body">
+    <div class="curtain"></div>
+    <div class="zoomContent">
+        <div class="luckDraw">
+            <div class="luckDrawContent">
+                <div class="luckDrawLamp">
+                    <div class="luckDrawPrize"></div>
+                </div>
+            </div>
+        </div>
+        <div class="winningPrizeDiv">
+            <div class="myborder">
+                <div class="headerDiv"></div>
+                <div class="contentDiv">
+                    <div class="content">
+                        <div class="prizeContent">
+                            <div class="prize"><div class="prizeImg"></div></div>
+                            <div class="prizeIntroduce">恭喜成为果本幸运儿，获得珍爱套盒一份！请去“我的奖品”页面领取</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottomDiv"></div>
+                <div class="borderTitle"></div>
+                <div class="borderClose"></div>
+                <div class="borderIsok"></div>
+            </div>
+        </div>
+        <div class="myTipsDiv" id="myTipsDiv">
+            <div class="myborder">
+                <div class="headerDiv"></div>
+                <div class="contentDiv">
+                    <div class="content">
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="bottomDiv"></div>
+                <div class="borderTitle"></div>
+                <div class="borderClose"></div>
+                <div class="borderIsok"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src='./api/storeApi.js'></script>
+<script src='./js/store.js'></script>
+</body>
+</html>

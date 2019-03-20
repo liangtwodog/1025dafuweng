@@ -1,0 +1,10 @@
+{
+  "myPlayer":{
+    "sx": 0,
+    "sy": 0,
+    "cols": 4,
+    "tilew": 112,
+    "tileh": 124,
+    "frames": 4
+  }
+}

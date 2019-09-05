@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>1025坚果寻宝大作战</title>
+    <title>坚果寻宝大作战</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <script src='./js/jquery-1.11.3.min.js'></script>
     <script src='https://res.fibodata.com/data/fibosdk.min.js'></script>
     <script src='https://res.wx.qq.com/open/js/jweixin-1.2.0.js'></script>
+    <script src='https://wechatfe.github.io/vconsole/lib/vconsole.min.js?v=3.0.0.0'></script>
     <script src='./api/apiConfig.js'></script>
     <script src='./api/indexApi.js'></script>
     <script src='./js/moment.js'></script>
     <script src='./js/common.js?v=1.2'></script>
-    <script src='./js/quintusAll.js'></script>
+    <script src='./js/quintusAll.js?v=1.0.0'></script>
     <script type="text/javascript" src="./js/qrcode.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css?v=1.0.0">
     <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body style="padding: 0;margin: 0;overflow: hidden;" >
@@ -354,6 +355,7 @@
 </body>
 
 <script>
+    window.vConsole = new window.VConsole();
     var GameCanvasHeight = $(window).height();
     var GameCanvasWidth = $(window).width();
     var gameScale = 1;
@@ -381,7 +383,9 @@
                 marginTop: (GameCanvasHeight -quintusScale*1334)/quintusScale/2
             })
             $("#gameContainer").attr({
-                "data-zoom":quintusScale
+                "data-zoom":quintusScale,
+                "data-top": (GameCanvasHeight -quintusScale*1334)/quintusScale/2,
+                "data-left": (GameCanvasWidth - quintusScale*750)/quintusScale
             })
         }else {
             quintusScale = GameCanvasWidth/750
@@ -404,7 +408,9 @@
             })
             $("#quintus_container").attr("data-zoom", quintusScale);
             $("#gameContainer").attr({
-                "data-zoom":quintusScale
+                "data-zoom":quintusScale,
+                "data-top": (GameCanvasHeight -quintusScale*1334)/quintusScale/2,
+                "data-left": (GameCanvasWidth - quintusScale*750)/quintusScale
             })
         }
     }
@@ -646,40 +652,40 @@
         chanceNb = stage.insert(new Q.chanceNb());
         player = stage.insert(new Q.myPlayer({x: playerPosition.x, y: playerPosition.y}));
         goBtn.on("click",function() {
-            // gameInfo = [
-            //     {
-            //         position: 3,
-            //         prize: 0,
-            //         score: 30,
-            //         scoreesSum: 30,
-            //         step: 3,
-            //         playAgain: {
-            //             gameArray: [
-            //               {
-            //                 position: 4,
-            //                 prize: 1,
-            //                 score: 5,
-            //                 scoreesSum: 35,
-            //                 step: 1
-            //               }
-            //             ]
-            //       }
-            //     },
-            //     {
-            //         position: 5,
-            //         prize: 10,
-            //         score: 20,
-            //         scoreesSum: 55,
-            //         step: 1
-            //     },
-            //     {
-            //         position: 9,
-            //         prize: 0,
-            //         score: 40,
-            //         scoreesSum: 95,
-            //         step: 4
-            //     }
-            // ]
+            gameInfo = [
+                {
+                    position: 3,
+                    prize: 0,
+                    score: 30,
+                    scoreesSum: 30,
+                    step: 3,
+                    playAgain: {
+                        gameArray: [
+                          {
+                            position: 4,
+                            prize: 1,
+                            score: 5,
+                            scoreesSum: 35,
+                            step: 1
+                          }
+                        ]
+                  }
+                },
+                {
+                    position: 5,
+                    prize: 10,
+                    score: 20,
+                    scoreesSum: 55,
+                    step: 1
+                },
+                {
+                    position: 9,
+                    prize: 0,
+                    score: 40,
+                    scoreesSum: 95,
+                    step: 4
+                }
+            ]
             if(gameInfo === ''){
                 indexApi.play();
             }else {

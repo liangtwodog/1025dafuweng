@@ -6128,6 +6128,8 @@ Quintus.Touch = function(Q) {
 
         normalizeTouch: function(touch,stage) {
             var gameZoom = $("#"+touch.target.id).attr("data-zoom");
+            var gameTop = $("#"+touch.target.id).attr("data-top");
+            var gameLeft = $("#"+touch.target.id).attr("data-left");
             var canvasPosX = touch.offsetX,
                 canvasPosY = touch.offsetY;
 
@@ -6162,9 +6164,8 @@ Quintus.Touch = function(Q) {
 
 
             //自己修改的
-            this.touchPos.p.x = this.touchPos.p.px/gameZoom;
-            this.touchPos.p.y = this.touchPos.p.py/gameZoom + (window.innerHeight - window.screen.height);
-
+            this.touchPos.p.x = this.touchPos.p.px/gameZoom + parseFloat(gameLeft);
+            this.touchPos.p.y = this.touchPos.p.py/gameZoom + parseFloat(gameTop);
             this.touchPos.obj = null;
             return this.touchPos;
         },
